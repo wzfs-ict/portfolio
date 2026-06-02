@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jesus Glen & Keren Sahana — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:   #0d1f3c;
+    --navy2:  #162d52;
+    --gold:   #c9a257;
+    --gold2:  #e8c37a;
+    --cream:  #faf8f3;
+    --warm:   #f3ede0;
+    --text:   #1a1a2e;
+    --muted:  #5a6070;
+    --light:  #8896a8;
+    --white:  #ffffff;
+    --accent: #2a6496;
+    --teal:   #1a7f6e;
+    --radius: 12px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13,31,60,0.96);
+    backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 3rem;
+    height: 60px;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold2); }
+
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 100px 2rem 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 20% 40%, rgba(201,162,87,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 60% at 80% 60%, rgba(26,127,110,0.07) 0%, transparent 60%);
+  }
+  
+  /* Adjusted for auto-scaling portrait photographs */
+  .hero-img-wrap {
+    /* Set a maximum width and height to prevent it from getting too huge on large screens */
+    max-width: 320px;
+    width: 80%; /* Takes up 80% of its container, scaling down on smaller screens */
+    /* Aspect ratio handles the portrait shape automatically without fixed heights */
+    aspect-ratio: 3 / 4; 
+    border-radius: 20px;
+    border: 4px solid var(--gold);
+    overflow: hidden;
+    margin-bottom: 1.2rem;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.1s forwards;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+    background-color: var(--warm);
+  }
+  .hero-img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 15%; /* Biases the crop towards the top where faces are */
+  }
+  
+  .hero-eyebrow {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 600px;
+    line-height: 1.8;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.35s forwards;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold2); }
+  .hero-subtitle {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.65);
+    max-width: 680px;
+    margin: 0 auto 2.5rem;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.5s forwards;
+  }
+  .hero-stats {
+    display: flex; gap: 3rem; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.65s forwards;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: var(--gold);
+    font-weight: 600;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.8s forwards;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 0.7rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold2); transform: translateY(-2px); }
+  .btn-outline {
+    border: 1.5px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.8);
+    padding: 0.7rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--gold2); color: var(--gold2); }
+
+  section { padding: 90px 2rem; }
+  .container { max-width: 1080px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .section-title em { font-style: italic; color: var(--teal); }
+  .section-title.light { color: var(--white); }
+  .section-intro {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 600px;
+    line-height: 1.8;
+  }
+  .section-intro.light { color: rgba(255,255,255,0.65); }
+
+  .editorial-letter {
+    max-width: 800px;
+    margin: 3.5rem auto 0;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--muted);
+  }
+  .editorial-letter p {
+    margin-bottom: 1.5rem;
+  }
+  .editorial-letter .signature {
+    margin-top: 3rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  .bg-navy { background: var(--navy); }
+  .bg-cream { background: var(--cream); }
+  .bg-white { background: var(--white); }
+
+  .current-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .current-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    padding: 1.8rem;
+    transition: all 0.3s;
+  }
+  .current-card.light-theme {
+    background: var(--white);
+    border: 1px solid #e8e2d5;
+  }
+  .current-card:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(201,162,87,0.4);
+    transform: translateY(-4px);
+  }
+  .current-card.light-theme:hover {
+    background: var(--white);
+    border-color: var(--teal);
+    box-shadow: 0 8px 30px rgba(26,127,110,0.08);
+  }
+  .current-card-icon {
+    width: 44px; height: 44px;
+    background: rgba(201,162,87,0.15);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+  }
+  .current-card.light-theme .current-card-icon { background: #ebf5f1; }
+  .current-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .current-card.light-theme h4 { color: var(--navy); }
+  .current-card p { font-size: 0.9rem; color: rgba(255,255,255,0.55); line-height: 1.65; }
+  .current-card.light-theme p { color: var(--muted); }
+  
+  .badge {
+    display: inline-block;
+    background: rgba(201,162,87,0.2);
+    color: var(--gold2);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+  }
+  .badge.teal-badge { background: #ebf5f1; color: var(--teal); }
+
+  .skills-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    margin-top: 3.5rem;
+    align-items: start;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .tag {
+    background: var(--warm);
+    color: var(--navy);
+    font-size: 0.83rem;
+    font-weight: 500;
+    padding: 0.35rem 0.9rem;
+    border-radius: 50px;
+    border: 1px solid #e8e0ce;
+    transition: all 0.2s;
+  }
+  .tag:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+  .tag.highlight { background: var(--navy); color: var(--gold2); border-color: var(--navy); }
+  .tag.highlight-teal { background: var(--teal); color: var(--white); border-color: var(--teal); }
+  
+  .timeline { margin-top: 3.5rem; position: relative; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 160px; top: 8px; bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), var(--teal));
+  }
+  .tl-item {
+    display: grid;
+    grid-template-columns: 160px auto 1fr;
+    gap: 0 2rem;
+    margin-bottom: 2.5rem;
+    align-items: start;
+  }
+  .tl-date {
+    text-align: right;
+    font-size: 0.83rem;
+    font-weight: 600;
+    color: var(--light);
+    padding-top: 2px;
+    letter-spacing: 0.3px;
+  }
+  .tl-dot-wrap { display: flex; justify-content: center; }
+  .tl-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--cream);
+    box-shadow: 0 0 0 2px var(--gold);
+    margin-top: 4px; flex-shrink: 0;
+  }
+  .tl-dot.teal { background: var(--teal); box-shadow: 0 0 0 2px var(--teal); }
+  .tl-dot.navy { background: var(--navy); box-shadow: 0 0 0 2px var(--navy); }
+  .tl-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--navy);
+    margin-bottom: 2px;
+  }
+  .tl-org { font-size: 0.8rem; color: var(--gold); font-weight: 600; margin-bottom: 0.4rem; }
+  .tl-org.teal-text { color: var(--teal); }
+  .tl-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+
+  #philosophy { background: var(--navy2); }
+  .phil-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3.5rem;
+  }
+  .phil-card {
+    padding: 2rem;
+    border-top: 2px solid rgba(255,255,255,0.1);
+  }
+  .phil-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--gold2);
+    margin-bottom: 0.8rem;
+  }
+  .phil-card p { font-size: 0.92rem; color: rgba(255,255,255,0.55); line-height: 1.75; }
+
+  #contact { background: var(--cream); }
+  .contact-inner {
+    background: var(--navy);
+    border-radius: 20px;
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  .contact-left h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+  .contact-left p { color: rgba(255,255,255,0.55); line-height: 1.8; }
+  .contact-list { list-style: none; margin-top: 2rem; }
+  .contact-list li {
+    display: flex; align-items: flex-start; gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  .contact-icon {
+    width: 36px; height: 36px; flex-shrink: 0;
+    background: rgba(201,162,87,0.15);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    color: var(--gold2);
+  }
+  .contact-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.35); margin-bottom: 1px; }
+  .contact-value { font-size: 0.95rem; color: rgba(255,255,255,0.85); }
+
+  footer {
+    background: var(--navy);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 1.5rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  footer p { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+  footer .footer-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1rem;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.7s, transform 0.7s;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 800px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; } 
+    section { padding: 60px 1.5rem; }
+    .skills-layout, .phil-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .timeline::before { left: 0; }
+    .tl-item { grid-template-columns: 0px auto 1fr; }
+    .tl-date { display: none; }
+    .contact-inner { grid-template-columns: 1fr; padding: 2.5rem; gap: 2rem; }
+    .hero-stats { gap: 2rem; }
+  }
+
+  @media print {
+    nav { display: none; }
+    section { padding: 40px 2rem; }
+    .hero { min-height: auto; padding: 60px 2rem; }
+    .hero::before { display: none; }
+    .current-card:hover { transform: none; box-shadow: none; }
+  }
+
+  .ci-line {
+    display: block; width: 16px; height: 2px;
+    background: var(--gold2); border-radius: 2px;
+  }
+  .card-dot {
+    display: block; width: 14px; height: 14px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--teal) 100%);
+  }
+  .card-dot.teal-dot { background: var(--teal); }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">JG & KS</span>
+  <ul class="nav-links">
+    <li><a href="#about">Our Calling</a></li>
+    <li><a href="#glen">Jesus Glen</a></li>
+    <li><a href="#keren">Keren Sahana</a></li>
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-img-wrap">
+    <!-- Image source is exactly what you requested -->
+    <img src="family-photo.jpg" alt="Jesus Glen, Keren Sahana and Family" onerror="this.src='https://placehold.co/160x210/162d52/e8c37a?text=Family'"/>
+  </div>
+  <p class="hero-eyebrow" style="color: rgba(255,255,255,0.7); font-size: 1rem; text-transform: none; letter-spacing: normal; margin-top: -0.5rem; margin-bottom: 2rem; font-weight: 500;">Glen, Keren, Trevor and Rae</p>
+  
+  <p class="hero-eyebrow" style="margin-bottom: 1rem;">Educators · Digital Transformation · SEN & EAL</p>
+  <h1>Jesus Glen <em>&</em> Keren Sahana</h1>
+  <p class="hero-subtitle">Educators with a shared calling rooted in faith, internationally experienced, and committed to transformational teaching in Christian school communities.</p>
+  
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num">21+</span>
+      <span class="stat-label">Combined Years</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">2</span>
+      <span class="stat-label">Countries Served</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">K-12</span>
+      <span class="stat-label">Age Range Handled</span>
+    </div>
+  </div>
+  <div class="hero-cta">
+    <a href="#about" class="btn-primary">Read Introduction</a>
+    <a href="#contact" class="btn-outline">Get in Touch</a>
+  </div>
+</section>
+
+<section id="about" class="bg-white">
+  <div class="container">
+    <p class="section-label reveal">Letter of Introduction</p>
+    <h2 class="section-title reveal">A Shared <em>Calling</em></h2>
+    
+    <div class="editorial-letter reveal">
+      <p>With over 11 years of experience in IT networking and infrastructure, combined with 9 years of teaching, I have been passionately committed to serving God through education. At Hebron School, I led the Computer Studies department and played a key role in enhancing the school's ICT environment. This included navigating the entire school into a comprehensive Virtual Learning Environment using Google Workspace, leading extensive workshops, and training staff during the critical lockdown digital transition.</p>
+      
+      <p>I have continued this leadership by directing the whole school transition to Microsoft 365 here at Zhongshi. Alongside these institutional roles, I have spent the past three years supporting schools with limited resources during my holidays, helping train staff and improve their teaching methods.</p>
+
+      <p>Beyond my professional endeavors, I am exceptionally proud of my wife, Keren, who was my cherished colleague at Hebron for the past five years. She is a remarkable educator with a master's degree in English Literature and has dedicated her career to teaching SEN and EAL. Her work in identifying and teaching children with dyslexia and TESOL has made a profound difference in their lives, creating an inclusive environment where all learners can thrive.</p>
+
+      <p>On a personal note, my wife and I have been blessed with two children, Trevor (5 years old) and Rae (2 years old). Their presence has deepened our commitment to fostering a nurturing and supportive learning environment for all students. As a family, we are excited about the prospect of joining a school that values inclusivity and community, and I am confident we would thrive in such an environment.</p>
+
+      <p>I would be grateful for the opportunity to discuss any potential roles where I could contribute to the school's mission. Thank you for considering my application, and I look forward to the possibility of becoming part of your school community.</p>
+
+      <div class="signature">
+        Warm regards,<br>
+        Jesus Glen Joshua
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="glen" class="bg-navy">
+  <div class="container">
+    <p class="section-label">Jesus Glen Joshua</p>
+    <h2 class="section-title light">Educator, Technologist, <em>Mission-Driven</em></h2>
+    <p class="section-intro light">12+ years of technology leadership and 9 years of Cambridge-certified teaching. I build the systems, and I teach the students who will one day run them.</p>
+    
+    <div class="current-grid">
+      <div class="current-card reveal">
+        <div class="badge">Curriculum Planning</div>
+        <div class="current-card-icon"><span class="card-dot"></span></div>
+        <h4>Computing & PSHE Frameworks</h4>
+        <p>Built Hebron School's Computer Science and KS1–KS4 Computing curriculum from the ground up. At WZFS, I am designing the PSHE curriculum specifically to meet ACSI standards.</p>
+      </div>
+      <div class="current-card reveal">
+        <div class="badge">Digital Transformation</div>
+        <div class="current-card-icon"><span class="card-dot"></span></div>
+        <h4>Enterprise LMS Rollouts</h4>
+        <p>Led the critical transition to Google Workspace and Moodle during Hebron's lockdown period. Currently directing the comprehensive Microsoft 365 integration at WZFS.</p>
+      </div>
+      <div class="current-card reveal">
+        <div class="badge">Pastoral & Technical</div>
+        <div class="current-card-icon"><span class="card-dot"></span></div>
+        <h4>Class Advisor & Lab Management</h4>
+        <p>Providing pastoral support for Grade 7 at WZFS, bridging cultural expectations, while independently managing the entire ICT lab infrastructure and school-wide digital workflows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-cream">
+  <div class="container">
+    <div class="skills-layout" style="margin-top: 0;">
+      <div class="reveal">
+        <h4 style="font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--light); font-weight: 600; margin-bottom: 0.5rem;">Professional Journey</h4>
+        <div class="timeline" style="margin-top: 2rem;">
+          <div class="tl-item">
+            <div class="tl-date">May 2025 – Present</div>
+            <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+            <div class="tl-content">
+              <div class="tl-org">Weihai Zhongshi Foreign School (WZFS)</div>
+              <h4>ICT Coordinator & Teacher</h4>
+              <p class="tl-desc">Teaching Cambridge ICT & Computing. Introduced Computing curriculum, led M365 transition, developed PSHE to ACSI standard, serving as Grade 7 Class Advisor.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2016 – Mar 2025</div>
+            <div class="tl-dot-wrap"><div class="tl-dot navy"></div></div>
+            <div class="tl-content">
+              <div class="tl-org">Hebron School, Ooty, India</div>
+              <h4>IT & CS Head of Dept / ICT Coordinator</h4>
+              <p class="tl-desc">Led dept for 5+ years. Introduced A-Level IT & CS. Led COVID-19 online transition via Google Workspace and Moodle. Managed 2023 full lab upgrade.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2012 – 2016</div>
+            <div class="tl-dot-wrap"><div class="tl-dot navy"></div></div>
+            <div class="tl-content">
+              <div class="tl-org">IBM & DCIS</div>
+              <h4>System Administrator / L2 Support</h4>
+              <p class="tl-desc">Advanced enterprise server support, multi-datacenter management, and IT infrastructure operations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <h4 style="font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--light); font-weight: 600; margin-bottom: 1.5rem;">Capabilities</h4>
+        <div class="skill-tags">
+          <span class="tag highlight">Microsoft 365</span>
+          <span class="tag highlight">Google Workspace</span>
+          <span class="tag highlight">Cambridge IGCSE ICT</span>
+          <span class="tag highlight">A Level IT & CS</span>
+          <span class="tag">Moodle LMS</span>
+          <span class="tag">Network Administration</span>
+          <span class="tag">WordPress</span>
+          <span class="tag">ACSI PSHE</span>
+          <span class="tag">KS1–KS4</span>
+          <span class="tag">Digital Literacy</span>
+          <span class="tag">Pastoral Care</span>
+        </div>
+        <div style="margin-top: 2rem;">
+          <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.6;"><strong>Credentials:</strong><br>
+          • Google Certified Trainer (2024)<br>
+          • Masters in Networking Technology<br>
+          • Cambridge International Diploma in Teaching & Learning</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="keren" class="bg-white">
+  <div class="container">
+    <p class="section-label" style="color: var(--teal);">Keren Sahana S</p>
+    <h2 class="section-title">Inclusive Educator & <em>EAL Specialist</em></h2>
+    <p class="section-intro">10+ years in education specializing in SEN and EAL. Believing every child deserves to be seen, supported, and equipped to flourish in the classroom.</p>
+    
+    <div class="current-grid">
+      <div class="current-card light-theme reveal">
+        <div class="badge teal-badge">Current Role</div>
+        <div class="current-card-icon"><span class="card-dot teal-dot"></span></div>
+        <h4>English Teacher & Class Advisor</h4>
+        <p>Teaching English Language & Literature and IGCSE ESL at WZFS. Serving as Grade 9 Class Advisor, maintaining regular parent communication and engagement.</p>
+      </div>
+      <div class="current-card light-theme reveal">
+        <div class="badge teal-badge">Specialization</div>
+        <div class="current-card-icon"><span class="card-dot teal-dot"></span></div>
+        <h4>SEN Support & IEPs</h4>
+        <p>Extensive experience developing and maintaining comprehensive Individual Education Plans (IEPs) for students with special educational needs.</p>
+      </div>
+      <div class="current-card light-theme reveal">
+        <div class="badge teal-badge">Methodology</div>
+        <div class="current-card-icon"><span class="card-dot teal-dot"></span></div>
+        <h4>Multisensory Learning</h4>
+        <p>Applying Orton-Gillingham and multisensory approaches (including Brain Gym) to support learners with dyslexia and other learning differences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-cream">
+  <div class="container">
+    <div class="skills-layout" style="margin-top: 0;">
+      <div class="reveal">
+        <h4 style="font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--light); font-weight: 600; margin-bottom: 0.5rem;">Professional Journey</h4>
+        <div class="timeline" style="margin-top: 2rem;">
+          <div class="tl-item">
+            <div class="tl-date">2025 – Present</div>
+            <div class="tl-dot-wrap"><div class="tl-dot teal"></div></div>
+            <div class="tl-content">
+              <div class="tl-org teal-text">Weihai Zhongshi Foreign School (WZFS)</div>
+              <h4>High School & MS English Teacher</h4>
+              <p class="tl-desc">Delivers standards-based English Language & Literature lessons with differentiation for diverse learners, including ESL students.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2018 – 2025</div>
+            <div class="tl-dot-wrap"><div class="tl-dot teal"></div></div>
+            <div class="tl-content">
+              <div class="tl-org teal-text">Hebron School, Ooty, India</div>
+              <h4>SEN & EAL Teacher</h4>
+              <p class="tl-desc">Developed IEPs, applied Orton-Gillingham methods, supported EAL students, and conducted frequent progress assessments.</p>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2014 – 2019</div>
+            <div class="tl-dot-wrap"><div class="tl-dot teal"></div></div>
+            <div class="tl-content">
+              <div class="tl-org teal-text">St. Hilda's & Corporate Sectors</div>
+              <h4>Special Needs Educator / Content Writer</h4>
+              <p class="tl-desc">Targeted SEN support in educational settings, following years as a content writer generating digital material for brand visibility.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <h4 style="font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--light); font-weight: 600; margin-bottom: 1.5rem;">Capabilities</h4>
+        <div class="skill-tags">
+          <span class="tag highlight-teal">Differentiated Instruction</span>
+          <span class="tag highlight-teal">IEP Creation</span>
+          <span class="tag highlight-teal">Orton-Gillingham</span>
+          <span class="tag highlight-teal">IGCSE ESL</span>
+          <span class="tag">Brain Gym</span>
+          <span class="tag">EAL Support</span>
+          <span class="tag">Inclusive Classroom</span>
+          <span class="tag">Progress Assessment</span>
+        </div>
+        <div style="margin-top: 2rem;">
+          <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.6;"><strong>Credentials:</strong><br>
+          • MA & BA in English Literature<br>
+          • SENCO — Ongoing (Good Word Education Centre)<br>
+          • Dyslexia Training Course<br>
+          • Intl Diploma in TESOL/TEFL (Young Learners)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="philosophy">
+  <div class="container">
+    <p class="section-label">Educational Philosophy</p>
+    <h2 class="section-title light">What We Believe About <em style="color:var(--gold2)">Education</em></h2>
+    <div class="phil-grid">
+      <div class="phil-card reveal">
+        <h4>Empowering Teachers (The ZPD)</h4>
+        <p>Our journey began by challenging traditional teaching methods, but it evolved into a deeper understanding: many teachers genuinely want to be good but struggle with how to adapt. We focus on scaffolding the educational environment and making learning visible, ensuring every student is challenged right at their Zone of Proximal Development (ZPD).</p>
+      </div>
+      <div class="phil-card reveal">
+        <h4>Volunteering & Multiplication</h4>
+        <p>We regularly spend our holidays volunteering in schools across India, training teachers who operate with limited resources. By equipping educators to adopt practical, inclusive teaching methodologies and digital tools, we multiply our impact far beyond our own individual classrooms.</p>
+      </div>
+      <div class="phil-card reveal">
+        <h4>Technology as a Servant</h4>
+        <p>Good technology education is never just about tools—it is fundamentally about people. Systems must be built to reduce friction, empower learners, and free teachers to do what only humans can do: form character, inspire curiosity, and truly care for their students.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <p class="section-label reveal">Get In Touch</p>
+    <h2 class="section-title reveal">Let's <em>Connect</em></h2>
+    <div class="contact-inner reveal">
+      <div class="contact-left">
+        <h3>Open to opportunities at mission-driven international schools globally.</h3>
+        <p>We are currently based in Weihai, China, and welcome conversations regarding future roles in Christian or faith-affiliated school communities.</p>
+        <ul class="contact-list">
+          <li>
+            <div class="contact-icon"><span class="ci-line"></span></div>
+            <div class="contact-detail">
+              <div class="contact-label">Jesus Glen Joshua</div>
+              <div class="contact-value">jesusglenjoshua@gmail.com</div>
+              <div class="contact-value" style="font-size: 0.85rem; opacity: 0.8;">+86 131 8111 3174</div>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon"><span class="ci-line"></span></div>
+            <div class="contact-detail">
+              <div class="contact-label">Keren Sahana S</div>
+              <div class="contact-value">kerensahanas@gmail.com</div>
+              <div class="contact-value" style="font-size: 0.85rem; opacity: 0.8;">+86 131 8111 5751</div>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon"><span class="ci-line"></span></div>
+            <div class="contact-detail">
+              <div class="contact-label">Location</div>
+              <div class="contact-value">Weihai, China</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 2rem;">
+          <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 1.5rem;">"Dedicated to making a meaningful impact in Christian education by leveraging technology, inclusive methodologies, and relational depth to build schools where students genuinely flourish."</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <span style="background: rgba(201,162,87,0.15); color: var(--gold2); font-size: 0.75rem; padding: 4px 12px; border-radius: 20px;">Digital Transformation</span>
+            <span style="background: rgba(201,162,87,0.15); color: var(--gold2); font-size: 0.75rem; padding: 4px 12px; border-radius: 20px;">SEN & EAL Mastery</span>
+            <span style="background: rgba(201,162,87,0.15); color: var(--gold2); font-size: 0.75rem; padding: 4px 12px; border-radius: 20px;">Faith-Based Education</span>
+            <span style="background: rgba(201,162,87,0.15); color: var(--gold2); font-size: 0.75rem; padding: 4px 12px; border-radius: 20px;">Cross-Cultural</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">JG & KS</span>
+  <p>Educators committed to faith, excellence & inclusion · 2026</p>
+  <p>Designed for Christian International School Applications</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
