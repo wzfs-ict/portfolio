@@ -3,7 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jesus Glen & Keren Sahana — Portfolio</title>
+<meta name="description" content="Computer Science educator, ICT coordinator and technology leader with international-school experience, curriculum development expertise and professional IT background.">
+<meta property="og:title" content="Jesus Glen Joshua | Computer Science Educator & Technology Leader">
+<meta property="og:description" content="International Computer Science and ICT educator, technology leader and curriculum developer with professional IT experience and a background in Cambridge education and Christian schools.">
+<meta property="og:type" content="website">
+<title>Jesus Glen Joshua | Computer Science Educator & Technology Leader</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
@@ -458,190 +462,421 @@
     background: linear-gradient(135deg, var(--gold) 0%, var(--teal) 100%);
   }
   .card-dot.teal-dot { background: var(--teal); }
+
+  .page-summary {
+    max-width: 760px;
+    margin: 1.5rem auto 2.5rem;
+    padding: 1.2rem 1.5rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,162,87,0.2);
+    border-radius: 14px;
+    color: rgba(255,255,255,0.8);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .statement-block {
+    margin-top: 1.2rem;
+    padding: 1rem 1.4rem;
+    border-left: 3px solid var(--gold);
+    background: rgba(255,255,255,0.04);
+    color: rgba(255,255,255,0.8);
+    font-size: 1.02rem;
+    font-style: italic;
+  }
+
+  .capability-grid,
+  .project-grid,
+  .mini-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .capability-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .mini-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .capability-card,
+  .project-card,
+  .mini-card {
+    background: var(--white);
+    border: 1px solid #e7dfd0;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 20px rgba(13,31,60,0.03);
+  }
+
+  .capability-card h4,
+  .project-card h4,
+  .mini-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.22rem;
+    color: var(--navy);
+    margin-bottom: 0.7rem;
+  }
+
+  .capability-card .eyebrow,
+  .project-card .eyebrow,
+  .mini-card .eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+  }
+
+  .capability-card p,
+  .project-card p,
+  .mini-card p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .ul-check {
+    list-style: none;
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .ul-check li {
+    position: relative;
+    padding-left: 1.4rem;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .ul-check li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  .quote-panel {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 1.5rem 1.25rem;
+    color: rgba(255,255,255,0.75);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .quote-panel strong {
+    color: var(--gold2);
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    align-items: start;
+  }
+
+  .row-list {
+    list-style: none;
+    display: grid;
+    gap: 0.7rem;
+    margin-top: 1rem;
+  }
+
+  .row-list li {
+    color: var(--muted);
+    font-size: 0.94rem;
+    line-height: 1.7;
+  }
+
+  .small-tag {
+    display: inline-block;
+    background: var(--warm);
+    color: var(--navy);
+    border: 1px solid #e6dcc9;
+    border-radius: 999px;
+    padding: 0.38rem 0.8rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 0.2rem 0.4rem 0 0;
+  }
+
+  .light-box {
+    background: #f8f4ee;
+    border: 1px solid #e7dfd0;
+    border-radius: 16px;
+    padding: 1.4rem;
+  }
+
+  @media (max-width: 800px) {
+    .two-col {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
 </head>
 <body>
 
 <nav>
-  <span class="nav-logo">JG & KS</span>
+  <span class="nav-logo">Jesus Glen Joshua</span>
   <ul class="nav-links">
-    <li><a href="#about">Our Calling</a></li>
-    <li><a href="#glen">Jesus Glen</a></li>
-    <li><a href="#keren">Keren Sahana</a></li>
-    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#computer-science">Computer Science</a></li>
+    <li><a href="#technology">Technology Leadership</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#christian">Christian Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<section class="hero">
+<section class="hero" id="home">
   <div class="hero-img-wrap">
-    <!-- Image source is exactly what you requested -->
-    <img src="family-photo.jpg" alt="Jesus Glen, Keren Sahana and Family" onerror="this.src='https://placehold.co/160x210/162d52/e8c37a?text=Family'"/>
+    <img src="family-photo.jpg" alt="Jesus Glen Joshua" onerror="this.src='https://placehold.co/160x210/162d52/e8c37a?text=Glen'"/>
   </div>
-  <p class="hero-eyebrow" style="color: rgba(255,255,255,0.7); font-size: 1rem; text-transform: none; letter-spacing: normal; margin-top: -0.5rem; margin-bottom: 2rem; font-weight: 500;">Glen, Keren, Trevor and Rae</p>
-  
-  <p class="hero-eyebrow" style="margin-bottom: 1rem;">Educators · Digital Transformation · SEN & EAL</p>
-  <h1>Jesus Glen <em>&</em> Keren Sahana</h1>
-  <p class="hero-subtitle">Educators with a shared calling rooted in faith, internationally experienced, and committed to transformational teaching in Christian school communities.</p>
-  
+
+  <p class="hero-eyebrow" style="margin-bottom: 0.75rem; color: rgba(255,255,255,0.74);">Computer Science Educator · ICT Coordinator · Technology Leader</p>
+  <h1>Jesus Glen Joshua</h1>
+  <p class="hero-subtitle">Bridging professional technology experience and international education to help students move from using technology to understanding it, creating with it, and thinking computationally.</p>
+
   <div class="hero-stats">
     <div class="stat">
-      <span class="stat-num">21+</span>
-      <span class="stat-label">Combined Years</span>
+      <span class="stat-num">11+</span>
+      <span class="stat-label">Years IT</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">9+</span>
+      <span class="stat-label">Years Education</span>
     </div>
     <div class="stat">
       <span class="stat-num">2</span>
-      <span class="stat-label">Countries Served</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">K-12</span>
-      <span class="stat-label">Age Range Handled</span>
+      <span class="stat-label">International Schools</span>
     </div>
   </div>
+
   <div class="hero-cta">
-    <a href="#about" class="btn-primary">Read Introduction</a>
+    <a href="#computer-science" class="btn-primary">Computer Science</a>
     <a href="#contact" class="btn-outline">Get in Touch</a>
   </div>
+
+  <div class="page-summary reveal">
+    Computer Science educator and ICT Coordinator with professional technology experience and international-school teaching practice. Experienced in Cambridge ICT and Computing, curriculum development, programming, digital systems and school technology leadership. I combine classroom teaching with practical IT and infrastructure experience.
+  </div>
+
+  <div class="statement-block reveal">"I build the systems, and I teach the students who will one day run them."</div>
 </section>
 
-<section id="about" class="bg-white">
+<section id="computer-science" class="bg-white">
   <div class="container">
-    <p class="section-label reveal">Letter of Introduction</p>
-    <h2 class="section-title reveal">A Shared <em>Calling</em></h2>
-    
-    <div class="editorial-letter reveal">
-      <p>With over 11 years of experience in IT networking and infrastructure, combined with 9 years of teaching, I have been passionately committed to serving God through education. At Hebron School, I led the Computer Studies department and played a key role in enhancing the school's ICT environment. This included navigating the entire school into a comprehensive Virtual Learning Environment using Google Workspace, leading extensive workshops, and training staff during the critical lockdown digital transition.</p>
-      
-      <p>I have continued this leadership by directing the whole school transition to Microsoft 365 here at Zhongshi. Alongside these institutional roles, I have spent the past three years supporting schools with limited resources during my holidays, helping train staff and improve their teaching methods.</p>
+    <p class="section-label reveal">Computer Science</p>
+    <h2 class="section-title reveal">From <em>using technology</em> to understanding it.</h2>
+    <p class="section-intro reveal">My teaching has increasingly moved beyond traditional ICT toward Computer Science, with a focus on programming, algorithms, computational thinking, data, problem solving and digital systems.</p>
 
-      <p>Beyond my professional endeavors, I am exceptionally proud of my wife, Keren, who was my cherished colleague at Hebron for the past five years. She is a remarkable educator with a master's degree in English Literature and has dedicated her career to teaching SEN and EAL. Her work in identifying and teaching children with dyslexia and TESOL has made a profound difference in their lives, creating an inclusive environment where all learners can thrive.</p>
+    <div class="capability-grid reveal">
+      <div class="capability-card">
+        <div class="eyebrow">Programming</div>
+        <h4>Programming</h4>
+        <ul class="ul-check">
+          <li>Python</li>
+          <li>JavaScript</li>
+          <li>Web technologies</li>
+          <li>Block-based programming</li>
+          <li>Programming fundamentals</li>
+        </ul>
+      </div>
 
-      <p>On a personal note, my wife and I have been blessed with two children, Trevor (5 years old) and Rae (2 years old). Their presence has deepened our commitment to fostering a nurturing and supportive learning environment for all students. As a family, we are excited about the prospect of joining a school that values inclusivity and community, and I am confident we would thrive in such an environment.</p>
+      <div class="capability-card">
+        <div class="eyebrow">Computer Science</div>
+        <h4>Computer Science</h4>
+        <ul class="ul-check">
+          <li>Algorithms</li>
+          <li>Computational thinking</li>
+          <li>Problem solving</li>
+          <li>Data representation</li>
+          <li>Programming concepts</li>
+          <li>Digital systems</li>
+        </ul>
+      </div>
 
-      <p>I would be grateful for the opportunity to discuss any potential roles where I could contribute to the school's mission. Thank you for considering my application, and I look forward to the possibility of becoming part of your school community.</p>
+      <div class="capability-card">
+        <div class="eyebrow">Curriculum</div>
+        <h4>Curriculum Development</h4>
+        <ul class="ul-check">
+          <li>Cambridge ICT</li>
+          <li>Computing curriculum</li>
+          <li>Progressive secondary pathways</li>
+          <li>Technology-enabled learning</li>
+          <li>Digital literacy progression</li>
+        </ul>
+      </div>
 
-      <div class="signature">
-        Warm regards,<br>
-        Jesus Glen Joshua
+      <div class="capability-card">
+        <div class="eyebrow">Development</div>
+        <h4>AP Preparation</h4>
+        <ul class="ul-check">
+          <li>Developing familiarity with AP Computer Science Principles and AP Computer Science A</li>
+          <li>Programming and problem-solving foundations</li>
+          <li>Computing concepts across data, systems and networks</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="two-col reveal">
+      <div class="light-box">
+        <p class="section-label" style="margin-bottom: 0.6rem; color: var(--gold);">AP development</p>
+        <p style="color: var(--muted); line-height: 1.8;">AP CSP provides a broad foundation in computing, programming, data, systems, networks and the impact of computing, while AP CSA provides a deeper programming pathway using Java. This is an area of professional development rather than a claim of previous AP teaching.</p>
+      </div>
+      <div class="light-box">
+        <p class="section-label" style="margin-bottom: 0.6rem; color: var(--gold);">Professional direction</p>
+        <p style="color: var(--muted); line-height: 1.8;">My professional journey has moved from IT infrastructure to ICT, then Computing, and now increasingly toward Computer Science. I am developing a stronger academic and curriculum profile in this area while continuing to contribute as a technology leader in school contexts.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="glen" class="bg-navy">
+<section id="projects" class="bg-cream">
   <div class="container">
-    <p class="section-label">Jesus Glen Joshua</p>
-    <h2 class="section-title light">Educator, Technologist, <em>Mission-Driven</em></h2>
-    <p class="section-intro light">12+ years of technology leadership and 9 years of Cambridge-certified teaching. I build the systems, and I teach the students who will one day run them.</p>
-    
-    <div class="current-grid">
-      <div class="current-card reveal">
-        <div class="badge">Curriculum Planning</div>
-        <div class="current-card-icon"><span class="card-dot"></span></div>
-        <h4>Computing & PSHE Frameworks</h4>
-        <p>Built Hebron School's Computer Science and KS1–KS4 Computing curriculum from the ground up. At WZFS, I am designing the PSHE curriculum specifically to meet ACSI standards.</p>
+    <p class="section-label reveal">Computer Science in Practice</p>
+    <h2 class="section-title reveal">Evidence of what I have <em>built and taught</em></h2>
+
+    <div class="project-grid reveal">
+      <div class="project-card">
+        <div class="eyebrow">Curriculum</div>
+        <h4>Computing curriculum development</h4>
+        <p><strong>Technology / tools:</strong> Google Workspace, Moodle, curriculum planning, classroom delivery</p>
+        <p><strong>My role:</strong> Curriculum designer and teacher.</p>
+        <p><strong>Educational impact:</strong> Helped establish a more structured Computing pathway from foundational digital literacy toward programming and computational thinking.</p>
       </div>
-      <div class="current-card reveal">
-        <div class="badge">Digital Transformation</div>
-        <div class="current-card-icon"><span class="card-dot"></span></div>
-        <h4>Enterprise LMS Rollouts</h4>
-        <p>Led the critical transition to Google Workspace and Moodle during Hebron's lockdown period. Currently directing the comprehensive Microsoft 365 integration at WZFS.</p>
+
+      <div class="project-card">
+        <div class="eyebrow">Programming</div>
+        <h4>Programming and digital problem solving</h4>
+        <p><strong>Technology / tools:</strong> Python, JavaScript, web technologies, classroom coding activities</p>
+        <p><strong>My role:</strong> Classroom teacher and curriculum developer.</p>
+        <p><strong>Educational impact:</strong> Taught students to move beyond using digital tools toward understanding systems, logic, and how programs work.</p>
       </div>
-      <div class="current-card reveal">
-        <div class="badge">Pastoral & Technical</div>
-        <div class="current-card-icon"><span class="card-dot"></span></div>
-        <h4>Class Advisor & Lab Management</h4>
-        <p>Providing pastoral support for Grade 7 at WZFS, bridging cultural expectations, while independently managing the entire ICT lab infrastructure and school-wide digital workflows.</p>
+
+      <div class="project-card">
+        <div class="eyebrow">School systems</div>
+        <h4>Google Workspace and Moodle implementation</h4>
+        <p><strong>Technology / tools:</strong> Google Workspace, Moodle, VLE systems</p>
+        <p><strong>My role:</strong> ICT leader and platform implementation support.</p>
+        <p><strong>Educational impact:</strong> Enabled blended learning, digital delivery and stronger staff collaboration during a major school transition.</p>
+      </div>
+
+      <div class="project-card">
+        <div class="eyebrow">Digital transformation</div>
+        <h4>Microsoft 365 rollout</h4>
+        <p><strong>Technology / tools:</strong> Microsoft 365, school systems, staff training</p>
+        <p><strong>My role:</strong> Technology lead.</p>
+        <p><strong>Educational impact:</strong> Supported the adoption of a more cohesive digital environment across teaching, communication and administration.</p>
+      </div>
+
+      <div class="project-card">
+        <div class="eyebrow">Infrastructure</div>
+        <h4>School technology systems and lab upgrade</h4>
+        <p><strong>Technology / tools:</strong> Network infrastructure, lab maintenance, digital environments</p>
+        <p><strong>My role:</strong> ICT coordinator and technical support lead.</p>
+        <p><strong>Educational impact:</strong> Improved the reliability of learning environments and strengthened the practical technology foundations behind classroom teaching.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="bg-cream">
+<section id="technology" class="bg-navy">
   <div class="container">
-    <div class="skills-layout" style="margin-top: 0;">
+    <p class="section-label reveal">Technology Leadership</p>
+    <h2 class="section-title light reveal">My professional technology background keeps my teaching grounded in <em>real systems</em>.</h2>
+    <p class="section-intro light reveal">My background in IT infrastructure, networking and digital transformation allows me to connect classroom Computer Science with the real systems, networks and digital environments students will encounter beyond school.</p>
+
+    <div class="mini-grid reveal">
+      <div class="mini-card">
+        <div class="eyebrow">Infrastructure</div>
+        <h4>IT infrastructure</h4>
+        <p>Worked across server support, networking, system administration and enterprise technology environments before and alongside my teaching career.</p>
+      </div>
+      <div class="mini-card">
+        <div class="eyebrow">Digital tools</div>
+        <h4>School technology systems</h4>
+        <p>Experience with Microsoft 365, Google Workspace, Moodle, district-style digital workflows and technology-enabled learning environments.</p>
+      </div>
+      <div class="mini-card">
+        <div class="eyebrow">Leadership</div>
+        <h4>Staff training and rollout</h4>
+        <p>Led school-wide transitions, trained staff, and supported digital adoption in ways that improved both classroom practice and institutional systems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="bg-white">
+  <div class="container">
+    <p class="section-label reveal">Education</p>
+    <h2 class="section-title reveal">A clear progression from <em>ICT to Computing to Computer Science</em>.</h2>
+
+    <div class="skills-layout" style="margin-top: 2rem;">
       <div class="reveal">
-        <h4 style="font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--light); font-weight: 600; margin-bottom: 0.5rem;">Professional Journey</h4>
-        <div class="timeline" style="margin-top: 2rem;">
+        <div class="timeline" style="margin-top: 0;">
           <div class="tl-item">
-            <div class="tl-date">May 2025 – Present</div>
+            <div class="tl-date">2025 – Present</div>
             <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
             <div class="tl-content">
-              <div class="tl-org">Weihai Zhongshi Foreign School (WZFS)</div>
-              <h4>ICT Coordinator & Teacher</h4>
-              <p class="tl-desc">Teaching Cambridge ICT & Computing. Introduced Computing curriculum, led M365 transition, developed PSHE to ACSI standard, serving as Grade 7 Class Advisor.</p>
+              <div class="tl-org">Weihai Zhongshi Foreign School</div>
+              <h4>ICT Coordinator & Computing Teacher</h4>
+              <p class="tl-desc">Teaching Cambridge ICT and Computing while developing a broader Computing and Computer Science pathway. This role combines classroom teaching, curriculum development, digital transformation and school technology leadership.</p>
             </div>
           </div>
+
           <div class="tl-item">
-            <div class="tl-date">2016 – Mar 2025</div>
+            <div class="tl-date">2016 – 2025</div>
             <div class="tl-dot-wrap"><div class="tl-dot navy"></div></div>
             <div class="tl-content">
-              <div class="tl-org">Hebron School, Ooty, India</div>
-              <h4>IT & CS Head of Dept / ICT Coordinator</h4>
-              <p class="tl-desc">Led dept for 5+ years. Introduced A-Level IT & CS. Led COVID-19 online transition via Google Workspace and Moodle. Managed 2023 full lab upgrade.</p>
+              <div class="tl-org">Hebron School, Ooty</div>
+              <h4>Computer Science & Curriculum Development</h4>
+              <p class="tl-desc">Helped develop Computing progression across KS1–KS4 and supported A-Level IT and Computer Science. Worked across Moodle, Google Workspace, staff training and classroom delivery, with a focus on building strong digital and computational foundations.</p>
             </div>
           </div>
+
           <div class="tl-item">
             <div class="tl-date">2012 – 2016</div>
             <div class="tl-dot-wrap"><div class="tl-dot navy"></div></div>
             <div class="tl-content">
-              <div class="tl-org">IBM & DCIS</div>
-              <h4>System Administrator / L2 Support</h4>
-              <p class="tl-desc">Advanced enterprise server support, multi-datacenter management, and IT infrastructure operations.</p>
+              <div class="tl-org">Professional IT</div>
+              <h4>System Administration and infrastructure support</h4>
+              <p class="tl-desc">Built a technical foundation in networking, servers and enterprise systems that continues to inform how I teach and lead with technology in education.</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="reveal">
-        <h4 style="font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--light); font-weight: 600; margin-bottom: 1.5rem;">Capabilities</h4>
-        <div class="skill-tags">
-          <span class="tag highlight">Microsoft 365</span>
-          <span class="tag highlight">Google Workspace</span>
-          <span class="tag highlight">Cambridge IGCSE ICT</span>
-          <span class="tag highlight">A Level IT & CS</span>
-          <span class="tag">Moodle LMS</span>
-          <span class="tag">Network Administration</span>
-          <span class="tag">WordPress</span>
-          <span class="tag">ACSI PSHE</span>
-          <span class="tag">KS1–KS4</span>
-          <span class="tag">Digital Literacy</span>
-          <span class="tag">Pastoral Care</span>
-        </div>
-        <div style="margin-top: 2rem;">
-          <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.6;"><strong>Credentials:</strong><br>
-          • Google Certified Trainer (2024)<br>
-          • Masters in Networking Technology<br>
-          • Cambridge International Diploma in Teaching & Learning</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section id="keren" class="bg-white">
-  <div class="container">
-    <p class="section-label" style="color: var(--teal);">Keren Sahana S</p>
-    <h2 class="section-title">Inclusive Educator & <em>EAL Specialist</em></h2>
-    <p class="section-intro">10+ years in education specializing in SEN and EAL. Believing every child deserves to be seen, supported, and equipped to flourish in the classroom.</p>
-    
-    <div class="current-grid">
-      <div class="current-card light-theme reveal">
-        <div class="badge teal-badge">Current Role</div>
-        <div class="current-card-icon"><span class="card-dot teal-dot"></span></div>
-        <h4>English Teacher & Class Advisor</h4>
-        <p>Teaching English Language & Literature and IGCSE ESL at WZFS. Serving as Grade 9 Class Advisor, maintaining regular parent communication and engagement.</p>
-      </div>
-      <div class="current-card light-theme reveal">
-        <div class="badge teal-badge">Specialization</div>
-        <div class="current-card-icon"><span class="card-dot teal-dot"></span></div>
-        <h4>SEN Support & IEPs</h4>
-        <p>Extensive experience developing and maintaining comprehensive Individual Education Plans (IEPs) for students with special educational needs.</p>
-      </div>
-      <div class="current-card light-theme reveal">
-        <div class="badge teal-badge">Methodology</div>
-        <div class="current-card-icon"><span class="card-dot teal-dot"></span></div>
-        <h4>Multisensory Learning</h4>
-        <p>Applying Orton-Gillingham and multisensory approaches (including Brain Gym) to support learners with dyslexia and other learning differences.</p>
+      <div class="reveal">
+        <div class="light-box">
+          <p class="section-label" style="margin-bottom: 0.8rem; color: var(--gold);">Current strengths</p>
+          <ul class="row-list">
+            <li>Teaching Cambridge ICT and Computing</li>
+            <li>Developing progression from digital literacy into programming, algorithms and problem solving</li>
+            <li>Supporting school technology leadership and digital transformation</li>
+            <li>Designing learning environments that connect systems thinking with classroom practice</li>
+            <li>Working across Microsoft 365, Google Workspace and Moodle</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -649,79 +884,97 @@
 
 <section class="bg-cream">
   <div class="container">
-    <div class="skills-layout" style="margin-top: 0;">
-      <div class="reveal">
-        <h4 style="font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--light); font-weight: 600; margin-bottom: 0.5rem;">Professional Journey</h4>
-        <div class="timeline" style="margin-top: 2rem;">
-          <div class="tl-item">
-            <div class="tl-date">2025 – Present</div>
-            <div class="tl-dot-wrap"><div class="tl-dot teal"></div></div>
-            <div class="tl-content">
-              <div class="tl-org teal-text">Weihai Zhongshi Foreign School (WZFS)</div>
-              <h4>High School & MS English Teacher</h4>
-              <p class="tl-desc">Delivers standards-based English Language & Literature lessons with differentiation for diverse learners, including ESL students.</p>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-date">2018 – 2025</div>
-            <div class="tl-dot-wrap"><div class="tl-dot teal"></div></div>
-            <div class="tl-content">
-              <div class="tl-org teal-text">Hebron School, Ooty, India</div>
-              <h4>SEN & EAL Teacher</h4>
-              <p class="tl-desc">Developed IEPs, applied Orton-Gillingham methods, supported EAL students, and conducted frequent progress assessments.</p>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-date">2014 – 2019</div>
-            <div class="tl-dot-wrap"><div class="tl-dot teal"></div></div>
-            <div class="tl-content">
-              <div class="tl-org teal-text">St. Hilda's & Corporate Sectors</div>
-              <h4>Special Needs Educator / Content Writer</h4>
-              <p class="tl-desc">Targeted SEN support in educational settings, following years as a content writer generating digital material for brand visibility.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal">
-        <h4 style="font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--light); font-weight: 600; margin-bottom: 1.5rem;">Capabilities</h4>
-        <div class="skill-tags">
-          <span class="tag highlight-teal">Differentiated Instruction</span>
-          <span class="tag highlight-teal">IEP Creation</span>
-          <span class="tag highlight-teal">Orton-Gillingham</span>
-          <span class="tag highlight-teal">IGCSE ESL</span>
-          <span class="tag">Brain Gym</span>
-          <span class="tag">EAL Support</span>
-          <span class="tag">Inclusive Classroom</span>
-          <span class="tag">Progress Assessment</span>
-        </div>
-        <div style="margin-top: 2rem;">
-          <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.6;"><strong>Credentials:</strong><br>
-          • MA & BA in English Literature<br>
-          • SENCO — Ongoing (Good Word Education Centre)<br>
-          • Dyslexia Training Course<br>
-          • Intl Diploma in TESOL/TEFL (Young Learners)</p>
-        </div>
-      </div>
+    <p class="section-label reveal">Why Computer Science?</p>
+    <h2 class="section-title reveal">My career began in <em>technology</em>, but my calling grew in education.</h2>
+    <div class="editorial-letter reveal">
+      <p>My career began in professional IT and technology infrastructure before moving into education. Teaching technology showed me that students need more than the ability to use digital tools — they need to understand systems, solve problems, write programs and think computationally.</p>
+      <p>That has led me to increasingly focus my teaching and curriculum development on Computing and Computer Science. I want students to move beyond being users of technology and become thoughtful, capable creators who understand how digital systems work.</p>
     </div>
   </div>
 </section>
 
-<section id="philosophy">
+<section class="bg-cream" id="vision">
   <div class="container">
-    <p class="section-label">Educational Philosophy</p>
-    <h2 class="section-title light">What We Believe About <em style="color:var(--gold2)">Education</em></h2>
-    <div class="phil-grid">
-      <div class="phil-card reveal">
-        <h4>Empowering Teachers (The ZPD)</h4>
-        <p>Our journey began by challenging traditional teaching methods, but it evolved into a deeper understanding: many teachers genuinely want to be good but struggle with how to adapt. We focus on scaffolding the educational environment and making learning visible, ensuring every student is challenged right at their Zone of Proximal Development (ZPD).</p>
+    <p class="section-label reveal">My Computer Science Vision</p>
+    <h2 class="section-title reveal">Students should not encounter Computer Science for the first time in senior high school.</h2>
+    <div class="editorial-letter reveal">
+      <p>A strong Computer Science pathway progressively develops computational thinking, problem solving and programming from the early years through secondary education.</p>
+      <p>Students should move from understanding digital systems, to creating algorithms, to writing programs, to designing increasingly complex computational solutions.</p>
+      <p>The goal is not simply to prepare students for an examination. It is to help students think, create, debug, communicate and solve problems like computer scientists.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white" id="teaching-approach">
+  <div class="container">
+    <p class="section-label reveal">Teaching Approach</p>
+    <h2 class="section-title reveal"><em>Concept before syntax.</em> Problem solving before memorisation.</h2>
+
+    <div class="capability-grid reveal">
+      <div class="capability-card">
+        <ul class="ul-check">
+          <li>Concept before syntax</li>
+          <li>Problem solving</li>
+          <li>Computational thinking</li>
+          <li>Learning by making</li>
+          <li>Debugging as part of learning</li>
+        </ul>
       </div>
-      <div class="phil-card reveal">
-        <h4>Volunteering & Multiplication</h4>
-        <p>We regularly spend our holidays volunteering in schools across India, training teachers who operate with limited resources. By equipping educators to adopt practical, inclusive teaching methodologies and digital tools, we multiply our impact far beyond our own individual classrooms.</p>
+      <div class="capability-card">
+        <ul class="ul-check">
+          <li>Progressive scaffolding</li>
+          <li>Differentiation</li>
+          <li>Project-based learning</li>
+          <li>Preparing students for further study</li>
+          <li>Moving students from technology users to technology creators</li>
+        </ul>
       </div>
-      <div class="phil-card reveal">
-        <h4>Technology as a Servant</h4>
-        <p>Good technology education is never just about tools—it is fundamentally about people. Systems must be built to reduce friction, empower learners, and free teachers to do what only humans can do: form character, inspire curiosity, and truly care for their students.</p>
+    </div>
+
+    <div class="quote-panel reveal" style="margin-top: 2rem;">
+      <strong>Teaching principle</strong><br>
+      "I want students to understand why their code works, not simply learn how to reproduce it."
+    </div>
+  </div>
+</section>
+
+<section id="christian" class="bg-navy">
+  <div class="container">
+    <p class="section-label reveal">Christian Education</p>
+    <h2 class="section-title light reveal">Christian education & calling</h2>
+    <div class="editorial-letter reveal" style="color: rgba(255,255,255,0.75); max-width: 760px;">
+      <p>My faith shapes how I teach, lead and serve. I am committed to helping students grow not only academically, but also as thoughtful, compassionate and responsible people. In Christian schools, I believe education is about more than content; it is about formation, character and purpose.</p>
+      <p>As a professional educator and technology leader, I bring a strong sense of calling, integrity and service. I am professionally qualified, internationally experienced, and eager to contribute to a school community that values both academic excellence and personal discipleship.</p>
+      <p>I value Christian education because it sees students as whole people: learners, citizens, creators and future leaders. That conviction continues to shape both my teaching and my leadership.</p>
+    </div>
+  </div>
+</section>
+
+<section id="qualifications" class="bg-white">
+  <div class="container">
+    <p class="section-label reveal">Qualifications & Certifications</p>
+    <h2 class="section-title reveal">Professional credentials</h2>
+
+    <div class="capability-grid reveal">
+      <div class="capability-card">
+        <div class="eyebrow">Education</div>
+        <h4>Master's / M.Sc. Networking Technology</h4>
+        <p>Professional foundation in networking and technology systems.</p>
+      </div>
+      <div class="capability-card">
+        <div class="eyebrow">Teaching</div>
+        <h4>Cambridge International Diploma in Teaching & Learning</h4>
+        <p>International teaching qualification and professional teaching practice.</p>
+      </div>
+      <div class="capability-card">
+        <div class="eyebrow">Digital</div>
+        <h4>Google Certified Trainer</h4>
+        <p>Validated capability in modern digital learning environments and staff training.</p>
+      </div>
+      <div class="capability-card">
+        <div class="eyebrow">Additional</div>
+        <h4>Professional qualifications</h4>
+        <p>Further credentials already listed in the portfolio continue to support my teaching, technology leadership and educational practice.</p>
       </div>
     </div>
   </div>
@@ -729,27 +982,25 @@
 
 <section id="contact">
   <div class="container">
-    <p class="section-label reveal">Get In Touch</p>
-    <h2 class="section-title reveal">Let's <em>Connect</em></h2>
+    <p class="section-label reveal">Contact</p>
+    <h2 class="section-title reveal">Open to conversations about <em>Computer Science</em> and <em>ICT leadership</em> roles.</h2>
     <div class="contact-inner reveal">
       <div class="contact-left">
-        <h3>Open to opportunities at mission-driven international schools globally.</h3>
-        <p>We are currently based in Weihai, China, and welcome conversations regarding future roles in Christian or faith-affiliated school communities.</p>
+        <h3>International educator and technology leader with a growing Computer Science focus.</h3>
+        <p>I am interested in working with schools that value strong teaching, thoughtful curriculum design, digital integration and Christian education.</p>
         <ul class="contact-list">
           <li>
             <div class="contact-icon"><span class="ci-line"></span></div>
             <div class="contact-detail">
-              <div class="contact-label">Jesus Glen Joshua</div>
+              <div class="contact-label">Email</div>
               <div class="contact-value">jesusglenjoshua@gmail.com</div>
-              <div class="contact-value" style="font-size: 0.85rem; opacity: 0.8;">+86 131 8111 3174</div>
             </div>
           </li>
           <li>
             <div class="contact-icon"><span class="ci-line"></span></div>
             <div class="contact-detail">
-              <div class="contact-label">Keren Sahana S</div>
-              <div class="contact-value">kerensahanas@gmail.com</div>
-              <div class="contact-value" style="font-size: 0.85rem; opacity: 0.8;">+86 131 8111 5751</div>
+              <div class="contact-label">Phone</div>
+              <div class="contact-value">+86 131 8111 3174</div>
             </div>
           </li>
           <li>
@@ -761,14 +1012,16 @@
           </li>
         </ul>
       </div>
+
       <div>
-        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 2rem;">
-          <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 1.5rem;">"Dedicated to making a meaningful impact in Christian education by leveraging technology, inclusive methodologies, and relational depth to build schools where students genuinely flourish."</p>
+        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius); padding: 2rem;">
+          <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.18rem; color: rgba(255,255,255,0.82); line-height: 1.8; margin-bottom: 1.2rem;">"A school leader should see someone who combines classroom teaching, curriculum development, technology leadership and a growing Computer Science identity — grounded in practice, not theory."</p>
           <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-            <span style="background: rgba(201,162,87,0.15); color: var(--gold2); font-size: 0.75rem; padding: 4px 12px; border-radius: 20px;">Digital Transformation</span>
-            <span style="background: rgba(201,162,87,0.15); color: var(--gold2); font-size: 0.75rem; padding: 4px 12px; border-radius: 20px;">SEN & EAL Mastery</span>
-            <span style="background: rgba(201,162,87,0.15); color: var(--gold2); font-size: 0.75rem; padding: 4px 12px; border-radius: 20px;">Faith-Based Education</span>
-            <span style="background: rgba(201,162,87,0.15); color: var(--gold2); font-size: 0.75rem; padding: 4px 12px; border-radius: 20px;">Cross-Cultural</span>
+            <span class="small-tag">Computer Science</span>
+            <span class="small-tag">ICT Coordination</span>
+            <span class="small-tag">Curriculum Design</span>
+            <span class="small-tag">Digital Transformation</span>
+            <span class="small-tag">Christian Education</span>
           </div>
         </div>
       </div>
@@ -777,9 +1030,9 @@
 </section>
 
 <footer>
-  <span class="footer-logo">JG & KS</span>
-  <p>Educators committed to faith, excellence & inclusion · 2026</p>
-  <p>Designed for Christian International School Applications</p>
+  <span class="footer-logo">Jesus Glen Joshua</span>
+  <p>Computer Science educator · ICT coordinator · technology leader</p>
+  <p>2026</p>
 </footer>
 
 <script>
